@@ -39,4 +39,20 @@ function playRound(computerChoice: string, playerChoice: string) {
     }
 }
 
-console.log(playRound(getComputerChoice(), "rock"));
+
+
+function game () {
+    let playerScore = 0;
+    let computerScore = 0;
+
+    for(let i= 0; i<5; i+=1) {
+        if(playRound(getComputerChoice(), "rock")==="Player wins") {
+            playerScore += 1;
+        }else {
+            computerScore +=1;
+        }
+    }
+
+    console.log("Player score is" + playerScore);
+    console.log("Computer score is" + computerScore);
+}

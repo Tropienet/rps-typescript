@@ -42,4 +42,17 @@ function playRound(computerChoice, playerChoice) {
         }
     }
 }
-console.log(playRound(getComputerChoice(), "rock"));
+function game() {
+    var playerScore = 0;
+    var computerScore = 0;
+    for (var i = 0; i < 5; i += 1) {
+        if (playRound(getComputerChoice(), "rock") === "Player wins") {
+            playerScore += 1;
+        }
+        else {
+            computerScore += 1;
+        }
+    }
+    console.log(playerScore);
+    console.log(computerScore);
+}
