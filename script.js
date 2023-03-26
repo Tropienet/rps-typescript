@@ -46,13 +46,14 @@ function game() {
     var playerScore = 0;
     var computerScore = 0;
     for (var i = 0; i < 5; i += 1) {
-        if (playRound(getComputerChoice(), "rock") === "Player wins") {
+        var playerChoice = prompt("Please enter your choice");
+        if (playRound(getComputerChoice(), playerChoice === null || playerChoice === void 0 ? void 0 : playerChoice.toLowerCase()) === "Player wins") {
             playerScore += 1;
         }
         else {
             computerScore += 1;
         }
     }
-    console.log(playerScore);
-    console.log(computerScore);
+    console.log("Player score is " + playerScore);
+    console.log("Computer score is" + computerScore);
 }

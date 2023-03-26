@@ -12,7 +12,7 @@ function getComputerChoice() {
     return "error"
 }
 
-function playRound(computerChoice: string, playerChoice: string) {
+function playRound(computerChoice: string, playerChoice: string | null) {
     const pWinMSG = "Player wins";
     const cWinMSG = "Computer wins"
 
@@ -46,13 +46,14 @@ function game () {
     let computerScore = 0;
 
     for(let i= 0; i<5; i+=1) {
-        if(playRound(getComputerChoice(), "rock")==="Player wins") {
+        let playerChoice = prompt("Please enter your choice");
+        if(playRound(getComputerChoice(), playerChoice?.toLowerCase())==="Player wins") {
             playerScore += 1;
         }else {
             computerScore +=1;
         }
     }
 
-    console.log("Player score is" + playerScore);
+    console.log("Player score is " + playerScore);
     console.log("Computer score is" + computerScore);
 }
